@@ -26,10 +26,6 @@ masterLocation = [
 # d = math.sqrt(pow(5 - 9, 2) + pow(3 - -4, 2))
 # print(d)
 
-longWil = 9.043992
-latWil = 47.459015
-
 for i in range(len(test_list.locations)-1):
-    distance = math.sqrt(pow(longWil - test_list.locations[i]["longitude"], 2) + pow(latWil - test_list.locations[i]["latitude"], 2))
-
-print(distance)
+    distance = math.sqrt(pow(masterLocation[0]["longitude"] - test_list.locations[i]["longitude"], 2) + pow(masterLocation[0]["latitude"] - test_list.locations[i]["latitude"], 2))
+    print(distance)
