@@ -19,7 +19,7 @@ masterLocation = [
 
 # distance between two coordinates:
 # longitude = x, latitude = y
-# d = sqrt(pow(x1 - x2) + pow(y1 - y2))
+# d = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2))
 
 # example:
 # P1(5; 3) und P2(9; -4)
@@ -28,4 +28,6 @@ masterLocation = [
 
 for i in range(len(test_list.locations)-1):
     distance = math.sqrt(pow(masterLocation[0]["longitude"] - test_list.locations[i]["longitude"], 2) + pow(masterLocation[0]["latitude"] - test_list.locations[i]["latitude"], 2))
+    test_list.locations[i]["distance"] = distance
+    print(test_list.locations[i])
     print(distance)
