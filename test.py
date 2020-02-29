@@ -34,10 +34,16 @@ masterLocation = [
 # d = math.sqrt(pow(5 - 9, 2) + pow(3 - -4, 2))
 # print(d)
 
+# distance wil - lausanne = 211.13km = 2.5881699207439985
+factorKm = 2.5881699207439985 / 211.13 
+print(factorKm)
+
 for i in range(len(test_list.locations)):
     for j in range(len(masterLocation)):
         distance = math.sqrt(pow(masterLocation[j]["longitude"] - test_list.locations[i]["longitude"], 2) + pow(masterLocation[j]["latitude"] - test_list.locations[i]["latitude"], 2))
-        print(masterLocation[j])
-        test_list.locations[i]["distance"] = distance
-        print(test_list.locations[i])
+        distanceKm = distance / factorKm
+        #print(masterLocation[j])
+        #test_list.locations[i]["distance"] = distance
+        #print(test_list.locations[i])
         #print(distance)
+        print("The distance between", str(masterLocation[j]["city"]), "and", str(test_list.locations[i]["city"]), "is", str(distanceKm), "km")
