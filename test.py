@@ -11,7 +11,15 @@ masterLocation = [
     "canton": "SG",
     "longitude": 9.043992,
     "latitude": 47.459015
-    } ]
+    },
+    {
+    "zip": "6500",
+    "city": "Bellinzona",
+    "canton": "TI",
+    "longitude": 9.02266750657928,
+    "latitude": 46.1999320324997
+    }
+]
 
 #print(masterLocation)
 # access key in list
@@ -26,8 +34,10 @@ masterLocation = [
 # d = math.sqrt(pow(5 - 9, 2) + pow(3 - -4, 2))
 # print(d)
 
-for i in range(len(test_list.locations)-1):
-    distance = math.sqrt(pow(masterLocation[0]["longitude"] - test_list.locations[i]["longitude"], 2) + pow(masterLocation[0]["latitude"] - test_list.locations[i]["latitude"], 2))
-    test_list.locations[i]["distance"] = distance
-    print(test_list.locations[i])
-    print(distance)
+for i in range(len(test_list.locations)):
+    for j in range(len(masterLocation)):
+        distance = math.sqrt(pow(masterLocation[j]["longitude"] - test_list.locations[i]["longitude"], 2) + pow(masterLocation[j]["latitude"] - test_list.locations[i]["latitude"], 2))
+        print(masterLocation[j])
+        test_list.locations[i]["distance"] = distance
+        print(test_list.locations[i])
+        #print(distance)
